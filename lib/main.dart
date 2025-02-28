@@ -8,40 +8,52 @@ class option1A extends StatelessWidget {
 
   @override
 Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: const Text('This is option 1A')),
+  return Scaffold(
+    appBar: AppBar(
+      title: const Center(child: Text('This is option 1A')),
+    ),
+    body: Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: NetworkImage(
+            'https://marvel-b1-cdn.bc0a.com/f00000000290274/www.lsu.edu/eng/images/hero_images/supporthero.jpg',
+          ),
+          fit: BoxFit.cover, // Makes the image cover the whole screen
+        ),
       ),
-       backgroundColor: const Color.fromARGB(255, 69, 11, 136),
-       
-      body: Center(
-              child: Column(
-        mainAxisAlignment: MainAxisAlignment.center, // Centers content vertically
-        children: [
-         Row(
+      child: Center(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-           Padding(
-             padding: const EdgeInsets.all(4.0),
-             child: Image.network('https://petlandleessummit.com/wp-content/uploads/2022/11/2502728_800-2-600x450.jpg', width:300, height:300),
-           ),
-                   
-        
-            
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Image.network(
+                    'https://petlandleessummit.com/wp-content/uploads/2022/11/2502728_800-2-600x450.jpg',
+                    width: 300,
+                    height: 300,
+                  ),
+                ),
+              ],
+            ),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                'This is not my dog, it’s a stock image that looks like my dog. It’s a shih-poo and I love that dawg. This reminds me of him.',
+                style: TextStyle(color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+            ),
           ],
-          
         ),
-         Padding(
-           padding: const EdgeInsets.all(96.0),
-           child: const Text('This is not my dog, its a random stock image off Google that looks like my dog.  Its a shih-poo and I love that dawg. This reminds me of him',style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),),
-         ),
-            ]
       ),
-      
-    )
-    );
-  }
+    ),
+  );
 }
+}
+
 class option1B extends StatelessWidget {
   const option1B({super.key});
 
