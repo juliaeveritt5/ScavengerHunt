@@ -24,8 +24,8 @@ class Option1A extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(4.0),
-                child: Image.network(
-                  'https://petlandleessummit.com/wp-content/uploads/2022/11/2502728_800-2-600x450.jpg',
+                child: Image.asset(
+                  'assets/dawg.jpg',
                   width: 300,
                   height: 300,
                 ),

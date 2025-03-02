@@ -12,12 +12,13 @@ class Option1B extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 69, 11, 136),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center, // Centers content vertically
+          mainAxisAlignment:
+              MainAxisAlignment.center, // Centers content vertically
           children: [
             Padding(
               padding: const EdgeInsets.all(4.0),
-              child: Image.network(
-                'https://petlandleessummit.com/wp-content/uploads/2022/11/2502728_800-2-600x450.jpg',
+              child: Image.asset(
+                'assets/dawg.jpg',
                 width: 300,
                 height: 300,
               ),
