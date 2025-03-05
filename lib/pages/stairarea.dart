@@ -50,7 +50,7 @@ class Stairarea extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const centerofEng()),
+                MaterialPageRoute(builder: (context) => const commonArea()),
               );
             },
             child: const Icon(Icons.arrow_back),
@@ -60,7 +60,7 @@ class Stairarea extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const donorwall()),
+                MaterialPageRoute(builder: (context) => const centerofEng()),
               );
             },
             child: const Icon(Icons.arrow_forward),
