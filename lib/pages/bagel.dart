@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'globalboolean.dart';
+import 'rightHallway.dart';
 
 class bagel extends StatelessWidget {
   const bagel({super.key});
@@ -30,7 +31,7 @@ class bagel extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.all(16.0),
                 child: Text(
-                  'Button will order a bagel',
+                  'Bagel recieved CHECKLIST UPDATED ',
                   style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
                   textAlign: TextAlign.center,
                 ),
@@ -42,10 +43,15 @@ class bagel extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const rightHallway()),
+              );
            GlobalState().isBagelOrdered = true;
         },
         child: const Icon(Icons.arrow_forward),
       ),
+      
     );
   }
 }

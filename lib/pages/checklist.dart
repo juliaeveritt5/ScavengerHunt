@@ -28,9 +28,9 @@ class Checklist extends StatelessWidget {
                 children: [
                   Text('Checklist', style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
                   Text('ORDER BAGEL', style: TextStyle(color: GlobalState().isBagelOrdered ? Color.fromARGB(255, 255, 0, 0) : const Color.fromARGB(255, 0, 0, 0))),
-                  Text('Find the royal throne', style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
-                  Text('Figure out the sponser of the Sustainable living lab', style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
-                  Text('Something about one of the donors on the donor wall', style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
+                  Text('Find the royal throne', style: TextStyle(color:  GlobalState().spinnychair ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0))),
+                  Text('Figure out the sponser of the Sustainable living lab', style: TextStyle(color:  GlobalState().basf ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0))),
+                  Text('Something about one of the donors on the donor wall', style: TextStyle(color:  GlobalState().donorwall ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0))),
                   Text('Something about the area by panera', style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
                   Text('Something about big stairs', style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
                   Text('Something about center of engineering', style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),

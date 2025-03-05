@@ -3,6 +3,7 @@ import 'bagel.dart';
 import 'rightHallway.dart';
 import 'commonArea.dart';
 import 'checklist.dart';
+import 'globalboolean.dart';
 
 class Panera extends StatelessWidget {
   const Panera({super.key});
@@ -11,7 +12,7 @@ class Panera extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('This is where you will order a bagel')),
+        title: const Center(child: Text('PANERA')),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -26,7 +27,7 @@ class Panera extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(16.0),
             child: Text(
-              'Button will order a bagel',
+              'Back gives bagel forward gives right hallway',
               style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
               textAlign: TextAlign.center,
             ),
@@ -38,15 +39,17 @@ class Panera extends StatelessWidget {
         children: [
           FloatingActionButton(
             onPressed: () {
+              GlobalState().isBagelOrdered = true;
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const commonArea()),
+                MaterialPageRoute(builder: (context) => const bagel()),
               );
             },
             child: const Icon(Icons.arrow_back),
           ),
           FloatingActionButton(
             onPressed: () {
+              
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const rightHallway()),

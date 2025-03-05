@@ -3,6 +3,7 @@ import 'bagel.dart';
 import 'rightHallway.dart';
 import 'commonArea.dart';
 import 'checklist.dart';
+import 'basf.dart';
 
 class rightHallway extends StatelessWidget {
   const rightHallway({super.key});
@@ -26,7 +27,7 @@ class rightHallway extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(16.0),
             child: Text(
-              'Button will order a bagel',
+              'BACK GIVES COMMON AREA FORWARD GIVES BASF LAB',
               style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
               textAlign: TextAlign.center,
             ),
@@ -49,7 +50,7 @@ class rightHallway extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const rightHallway()),
+                MaterialPageRoute(builder: (context) => const basf()),
               );
             },
             child: const Icon(Icons.arrow_forward),

@@ -3,16 +3,16 @@ import 'bagel.dart';
 import 'rightHallway.dart';
 import 'commonArea.dart';
 import 'checklist.dart';
-import 'stairarea.dart';
+import 'globalboolean.dart';
 
-class commonArea extends StatelessWidget {
-  const commonArea({super.key});
+class donorwall extends StatelessWidget {
+  const donorwall({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('This is the Common Area')),
+        title: const Center(child: Text('This is donor wall')),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -27,7 +27,7 @@ class commonArea extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(16.0),
             child: Text(
-              'count number of tables',
+              'ADD 3 Buttons for who one of the name of the wall - first one should be basf and should update checklist',
               style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
               textAlign: TextAlign.center,
             ),
@@ -35,17 +35,17 @@ class commonArea extends StatelessWidget {
         ),
       ),
       floatingActionButton: Row(
-        mainAxisSize: MainAxisSize.min, // Prevents excess spacing    IDK MAN NUMBER OF TABLES OR SOMETHING 
+        mainAxisSize: MainAxisSize.min, // Prevents excess spacing
         children: [
                     FloatingActionButton(
             onPressed: () {
-                    
+               GlobalState().donorwall = true; // CREATE THE STUFF THAT SAYS THIS WAS RIGHT BUTTON AND OTHER 2 TELL U WRONG 
             },
             child: const Icon(Icons.arrow_back),
           ),
                     FloatingActionButton(
             onPressed: () {
-
+ 
             },
             child: const Icon(Icons.arrow_back),
           ),
@@ -59,11 +59,12 @@ class commonArea extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Stairarea()),
+                MaterialPageRoute(builder: (context) => const commonArea()),
               );
             },
             child: const Icon(Icons.arrow_back),
           ),
+
           FloatingActionButton(
             onPressed: () {
               Navigator.push(
