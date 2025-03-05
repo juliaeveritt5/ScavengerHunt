@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:scavenger_hunt/pages/panera.dart';
 import 'pages/option1A.dart';
 import 'pages/option1B.dart';
+import 'pages/checklist.dart';
 
 void main() {
   runApp(const MyApp());
@@ -126,6 +128,24 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const Option1B()),
+              );
+            },
+            child: const Icon(Icons.arrow_back),
+          ),
+          FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Checklist()),
+              );
+            },
+            child: const Icon(Icons.smart_button),
+          ),
+                    FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Panera()),
               );
             },
             child: const Icon(Icons.arrow_back),
