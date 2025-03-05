@@ -4,6 +4,7 @@ import 'rightHallway.dart';
 import 'commonArea.dart';
 import 'checklist.dart';
 import 'globalboolean.dart';
+import 'centerofEng.dart';
 
 class donorwall extends StatelessWidget {
   const donorwall({super.key});
@@ -41,25 +42,25 @@ class donorwall extends StatelessWidget {
             onPressed: () {
                GlobalState().donorwall = true; // CREATE THE STUFF THAT SAYS THIS WAS RIGHT BUTTON AND OTHER 2 TELL U WRONG 
             },
-            child: const Icon(Icons.arrow_back),
+            child: const Icon(Icons.star),
           ),
                     FloatingActionButton(
             onPressed: () {
  
             },
-            child: const Icon(Icons.arrow_back),
+            child: const Icon(Icons.circle),
           ),
                     FloatingActionButton(
             onPressed: () {
 
             },
-            child: const Icon(Icons.arrow_back),
+            child: const Icon(Icons.circle),
           ),
           FloatingActionButton(
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const commonArea()),
+                MaterialPageRoute(builder: (context) => const centerofEng()),
               );
             },
             child: const Icon(Icons.arrow_back),

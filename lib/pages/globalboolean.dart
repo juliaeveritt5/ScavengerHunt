@@ -10,6 +10,7 @@ class GlobalState {
   bool staircase = false; 
   bool centerofeng = false; 
   bool longHallway = false; 
+  bool numChairs = false;
 
   factory GlobalState() {
     return _instance;

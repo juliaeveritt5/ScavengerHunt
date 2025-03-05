@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scavenger_hunt/pages/globalboolean.dart';
 import 'bagel.dart';
 import 'rightHallway.dart';
 import 'commonArea.dart';
@@ -39,21 +40,21 @@ class commonArea extends StatelessWidget {
         children: [
                     FloatingActionButton(
             onPressed: () {
-                    
+                    GlobalState().numChairs = true;
             },
-            child: const Icon(Icons.arrow_back),
+            child: const Icon(Icons.star),
           ),
                     FloatingActionButton(
             onPressed: () {
 
             },
-            child: const Icon(Icons.arrow_back),
+            child: const Icon(Icons.circle),
           ),
                     FloatingActionButton(
             onPressed: () {
 
             },
-            child: const Icon(Icons.arrow_back),
+            child: const Icon(Icons.circle),
           ),
           FloatingActionButton(
             onPressed: () {

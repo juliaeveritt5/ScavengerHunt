@@ -5,15 +5,18 @@ import 'commonArea.dart';
 import 'checklist.dart';
 import 'globalboolean.dart';
 import 'donorwall.dart';
+import 'centerofeng.dart';
+import 'chairroom.dart';
 
-class basf extends StatelessWidget {
-  const basf({super.key});
+
+class chairroom extends StatelessWidget {
+  const chairroom({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('This is looking into BASF')),
+        title: const Center(child: Text('This is the glorious chair room ')),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -40,43 +43,11 @@ class basf extends StatelessWidget {
         children: [
                     FloatingActionButton(
             onPressed: () {
-               GlobalState().basf = true; // CREATE THE STUFF THAT SAYS THIS WAS RIGHT BUTTON AND OTHER 2 TELL U WRONG 
+               GlobalState().spinnychair = true; //fact about cool chair
             },
             child: const Icon(Icons.star),
           ),
-                    FloatingActionButton(
-            onPressed: () {
- 
-            },
-            child: const Icon(Icons.circle),
-          ),
-                    FloatingActionButton(
-            onPressed: () {
 
-            },
-            child: const Icon(Icons.circle),
-          ),
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const donorwall()),
-              );
-            },
-            child: const Icon(Icons.arrow_back),
-          ),
-
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const commonArea()),
-              );
-            },
-            child: const Icon(Icons.arrow_forward),
-          ),
-          const SizedBox(width: 10), // Space between buttons
-          const SizedBox(width: 10),
           FloatingActionButton(
             onPressed: () {
               Navigator.push(
