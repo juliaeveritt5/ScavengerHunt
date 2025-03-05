@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:scavenger_hunt/pages/panera.dart';
-import 'pages/option1A.dart';
-import 'pages/option1B.dart';
+import 'pages/rightHallway.dart';
+import 'pages/commonArea.dart';
 import 'pages/checklist.dart';
+import 'pages/panera.dart';
 
 void main() {
   runApp(const MyApp());
@@ -92,7 +93,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const Option1A()),
+                              // builder: (context) => const Option1A()),
+                              builder: (context) => const Panera()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
@@ -117,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Option1A()),
+                MaterialPageRoute(builder: (context) => const rightHallway()),
               );
             },
             child: const Icon(Icons.arrow_forward),
@@ -127,7 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Option1B()),
+                MaterialPageRoute(builder: (context) => const commonArea()),
               );
             },
             child: const Icon(Icons.arrow_back),

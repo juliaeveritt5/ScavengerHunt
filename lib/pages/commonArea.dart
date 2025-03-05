@@ -4,14 +4,14 @@ import 'rightHallway.dart';
 import 'commonArea.dart';
 import 'checklist.dart';
 
-class Panera extends StatelessWidget {
-  const Panera({super.key});
+class commonArea extends StatelessWidget {
+  const commonArea({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('This is where you will order a bagel')),
+        title: const Center(child: Text('This is the Common Area')),
       ),
       body: Container(
         decoration: const BoxDecoration(
