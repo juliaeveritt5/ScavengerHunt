@@ -52,7 +52,7 @@ class Panera extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Image.asset('assets/paneraScreen.png', width: 600),
+                  child: Image.asset('assets/paneratablet.png', width: 600),
                 ),
                 Text(
                   'Order yourself a bagel!',

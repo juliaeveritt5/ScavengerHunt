@@ -36,7 +36,7 @@ class bagel extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Image.asset('assets/bagel.png', width: 600),
+                  child: Image.asset('assets/BAGELtRIAL.png', width: 600),
                 ),
                 Text(
                   'This task has been checked off on your list.',
