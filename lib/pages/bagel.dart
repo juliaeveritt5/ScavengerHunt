@@ -57,7 +57,7 @@ class bagel extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const rightHallway()),
+            MaterialPageRoute(builder: (context) => const RightHallway()),
           );
           GlobalState().isBagelOrdered = true;
         },

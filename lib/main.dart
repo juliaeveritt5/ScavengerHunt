@@ -119,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const rightHallway()),
+                MaterialPageRoute(builder: (context) => const RightHallway()),
               );
             },
             child: const Icon(Icons.arrow_forward),

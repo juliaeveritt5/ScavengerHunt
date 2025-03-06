@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:scavenger_hunt/pages/globalboolean.dart';
 import 'bagel.dart';
 import 'rightHallway.dart';
 import 'commonArea.dart';
 import 'checklist.dart';
-import 'stairarea.dart';
+import 'basf.dart';
+import 'globalboolean.dart';
 
 class commonArea extends StatelessWidget {
   const commonArea({super.key});
@@ -13,86 +13,149 @@ class commonArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('This is the Common Area')),
-      ),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage(
-              'https://marvel-b1-cdn.bc0a.com/f00000000290274/www.lsu.edu/eng/images/hero_images/supporthero.jpg',
-            ),
-            fit: BoxFit.cover,
+        title: const Text(
+          'COMMON AREA',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
           ),
         ),
-        child: const Center(
-          child: Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              'count number of tables',
-              style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
-              textAlign: TextAlign.center,
+        centerTitle: true,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text(
+                "Welcome to the commons area",
+                style: TextStyle(color: Colors.black, fontSize: 20),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Center(
+              // Centering the image
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset('assets/commons.png', width: 600),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                'How many tables are in the commons area?',
+                style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Padding(
+  padding: const EdgeInsets.all(16.0),
+  child: Center(
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.center, // Centering the buttons
+      children: [
+        ElevatedButton(
+          onPressed: () {
+            GlobalState().numChairs = true;
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.deepPurple,
+            textStyle: const TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
             ),
           ),
+          child: const Text(
+            "12",
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        const SizedBox(width: 10), // Adding spacing between buttons
+        ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.deepPurple,
+            textStyle: const TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          child: const Text(
+            "14",
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        const SizedBox(width: 10), // Adding spacing between buttons
+        ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.deepPurple,
+            textStyle: const TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          child: const Text(
+            "109",
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+      ],
+    ),
+  ),
+)
+
+          ],
         ),
       ),
-      floatingActionButton: Row(
-        mainAxisSize: MainAxisSize.min, // Prevents excess spacing    IDK MAN NUMBER OF TABLES OR SOMETHING 
-        children: [
-                    FloatingActionButton(
-            onPressed: () {
-                    GlobalState().numChairs = true;
-            },
-            child: const Icon(Icons.star),
-          ),
-                    FloatingActionButton(
-            onPressed: () {
-
-            },
-            child: const Icon(Icons.circle),
-          ),
-                    FloatingActionButton(
-            onPressed: () {
-
-            },
-            child: const Icon(Icons.circle),
-          ),
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Stairarea()),
-              );
-            },
-            child: const Icon(Icons.arrow_back),
-          ),
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const rightHallway()),
-              );
-            },
-            child: const Icon(Icons.arrow_forward),
-          ),
-          const SizedBox(width: 10), // Space between buttons
-          const SizedBox(width: 10),
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Checklist()),
-              );
-            },
-            child: const Icon(Icons.smart_button),
-          ),
-          const SizedBox(width: 10),
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.pop(context); // Go back to the previous page
-            },
-            child: const Icon(Icons.refresh),
-          ),
-        ],
+      floatingActionButton: Align(
+        alignment: Alignment.bottomCenter,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const RightHallway()),
+                );
+              },
+              child: const Icon(Icons.arrow_back),
+            ),
+            const SizedBox(width: 10),
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const basf()),
+                );
+              },
+              child: const Icon(Icons.arrow_forward),
+            ),
+            const SizedBox(width: 10),
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Checklist()),
+                );
+              },
+              child: const Icon(Icons.smart_button),
+            ),
+            const SizedBox(width: 10),
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.pop(context); // Go back to the previous page
+              },
+              child: const Icon(Icons.refresh),
+            ),
+          ],
+        ),
       ),
     );
   }
