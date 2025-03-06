@@ -17,8 +17,8 @@ class rightHallway extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(
-              'https://marvel-b1-cdn.bc0a.com/f00000000290274/www.lsu.edu/eng/images/hero_images/supporthero.jpg',
+            image: AssetImage(
+              'assets/rightHallway.jpeg',
             ),
             fit: BoxFit.cover,
           ),
