@@ -143,7 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
             child: const Icon(Icons.smart_button),
           ),
-                    FloatingActionButton(
+          FloatingActionButton(
             onPressed: () {
               Navigator.push(
                 context,

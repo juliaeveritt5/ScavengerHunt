@@ -14,28 +14,81 @@ class Panera extends StatelessWidget {
       appBar: AppBar(
         title: const Center(child: Text('PANERA')),
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage(
-              'https://marvel-b1-cdn.bc0a.com/f00000000290274/www.lsu.edu/eng/images/hero_images/supporthero.jpg',
-            ),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: const Center(
-          child: Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              'Back gives bagel forward gives right hallway',
-              style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
-              textAlign: TextAlign.center,
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: Opacity(
+              opacity: 0.2,
+              child: Image.network(
+                'https://marvel-b1-cdn.bc0a.com/f00000000290274/www.lsu.edu/eng/images/hero_images/supporthero.jpg',
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-        ),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: const Text(
+                    'Your first stop is Panera',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Text(
+                  "Panera is very important for LSU's engineering students to be successful.",
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  "Caffeine and mac n cheese are essential for getting through life.",
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                  textAlign: TextAlign.center,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.asset('assets/paneraScreen.png', width: 600),
+                ),
+                Text(
+                  'Order yourself a bagel!',
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                  textAlign: TextAlign.center,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      GlobalState().isBagelOrdered = true;
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const bagel()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.deepPurple,
+                      textStyle: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    child: const Text(
+                      "BAGEL",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
       floatingActionButton: Row(
-        mainAxisSize: MainAxisSize.min, // Prevents excess spacing
+        mainAxisSize: MainAxisSize.min,
         children: [
           FloatingActionButton(
             onPressed: () {
@@ -49,7 +102,6 @@ class Panera extends StatelessWidget {
           ),
           FloatingActionButton(
             onPressed: () {
-              
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const rightHallway()),
@@ -57,7 +109,7 @@ class Panera extends StatelessWidget {
             },
             child: const Icon(Icons.arrow_forward),
           ),
-          const SizedBox(width: 10), // Space between buttons
+          const SizedBox(width: 10),
           const SizedBox(width: 10),
           FloatingActionButton(
             onPressed: () {
@@ -71,7 +123,7 @@ class Panera extends StatelessWidget {
           const SizedBox(width: 10),
           FloatingActionButton(
             onPressed: () {
-              Navigator.pop(context); // Go back to the previous page
+              Navigator.pop(context);
             },
             child: const Icon(Icons.refresh),
           ),
