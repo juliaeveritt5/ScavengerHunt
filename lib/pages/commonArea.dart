@@ -3,6 +3,7 @@ import 'rightHallway.dart';
 import 'checklist.dart';
 import 'basf.dart';
 import 'globalboolean.dart';
+import 'flier.dart';
 import 'stairarea.dart';
 
 class commonArea extends StatelessWidget {
@@ -60,7 +61,10 @@ class commonArea extends StatelessWidget {
       children: [
         ElevatedButton(
           onPressed: () {
-            GlobalState().numChairs = true;
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const flier()),
+              );
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.deepPurple,
