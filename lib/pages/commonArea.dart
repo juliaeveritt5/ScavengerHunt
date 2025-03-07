@@ -3,6 +3,7 @@ import 'rightHallway.dart';
 import 'checklist.dart';
 import 'basf.dart';
 import 'globalboolean.dart';
+import 'stairarea.dart';
 
 class commonArea extends StatelessWidget {
   const commonArea({super.key});
@@ -120,7 +121,7 @@ class commonArea extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const RightHallway()),
+                  MaterialPageRoute(builder: (context) => const Stairarea()),
                 );
               },
               child: const Icon(Icons.arrow_back),
