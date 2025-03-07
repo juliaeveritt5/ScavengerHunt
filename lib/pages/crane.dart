@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scavenger_hunt/pages/chairroom.dart';
 import 'globalboolean.dart';
-import 'rightHallway.dart';
 
 class Crane extends StatelessWidget {
   const Crane({super.key});

@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scavenger_hunt/pages/centerofEng.dart';
-import 'package:scavenger_hunt/pages/donorwall.dart';
-import 'rightHallway.dart';
 import 'checklist.dart';
-import 'basf.dart';
 import 'globalboolean.dart';
-import 'flier.dart';
 import 'stairarea.dart';
 import 'pftMap.dart';
 

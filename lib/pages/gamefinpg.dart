@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'globalboolean.dart';
-import 'gamefinpg.dart';
+import 'package:scavenger_hunt/main.dart';
+
 class gamefinpg extends StatelessWidget {
   const gamefinpg({super.key});
 
@@ -10,7 +11,7 @@ class gamefinpg extends StatelessWidget {
       appBar: AppBar(
         title: const Center(child: Text('Checklist')),
       ),
-        body: Container(
+      body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(
@@ -19,26 +20,40 @@ class gamefinpg extends StatelessWidget {
             fit: BoxFit.cover, // Makes the image cover the whole screen
           ),
         ),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center, 
-          children: [ 
-            Padding(
-              padding: const EdgeInsets.all(32.0),
-              child: Column(
-                children: [ 
-                  Text('GAMEFINISHED', style: TextStyle(color: GlobalState().isBagelOrdered ? Color.fromARGB(255, 255, 0, 0) : const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
-                  SizedBox(height: 20),
-
-                ],
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(32.0),
+                child: Column(
+                  children: [
+                    Text('GAME FINISHED',
+                        style: TextStyle(
+                            color: GlobalState().isBagelOrdered
+                                ? Color.fromARGB(255, 255, 0, 0)
+                                : const Color.fromARGB(255, 0, 0, 0),
+                            fontSize: 24)),
+                    SizedBox(height: 30),
+                    Text("WOULD YOU LIKE TO PLAY AGAIN?"),
+                    SizedBox(width: 15),
+                    FloatingActionButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MyApp()),
+                        );
+                      },
+                      child: const Icon(Icons.restart_alt),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
-        ),
     );
-
   }
-
 }

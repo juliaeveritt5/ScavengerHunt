@@ -104,52 +104,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Text(
                         "Let's Geaux",
                         style: TextStyle(color: Colors.white),
-                      )),
+                      )
+                    ),
                 )
               ],
             ),
-          ),
-        ],
-      ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const RightHallway()),
-              );
-            },
-            child: const Icon(Icons.arrow_forward),
-          ),
-          const SizedBox(width: 10), // Spacing between buttons
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const commonArea()),
-              );
-            },
-            child: const Icon(Icons.arrow_back),
-          ),
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Checklist()),
-              );
-            },
-            child: const Icon(Icons.smart_button),
-          ),
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Panera()),
-              );
-            },
-            child: const Icon(Icons.arrow_back),
           ),
         ],
       ),

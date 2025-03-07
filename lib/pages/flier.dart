@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scavenger_hunt/pages/basf.dart';
 import 'globalboolean.dart';
-import 'rightHallway.dart';
-import 'commonArea.dart';
 
 class flier extends StatelessWidget {
   const flier({super.key});

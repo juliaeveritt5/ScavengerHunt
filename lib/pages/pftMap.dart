@@ -74,7 +74,7 @@ class MapPage extends StatelessWidget {
 class ImagePage extends StatelessWidget {
   final String imageName;
 
-  ImagePage(this.imageName);
+  const ImagePage(this.imageName, {super.key});
 
   @override
   Widget build(BuildContext context) {

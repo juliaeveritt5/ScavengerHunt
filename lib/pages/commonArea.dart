@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'rightHallway.dart';
 import 'checklist.dart';
 import 'basf.dart';
-import 'globalboolean.dart';
 import 'flier.dart';
 import 'stairarea.dart';
 import 'pftMap.dart';
