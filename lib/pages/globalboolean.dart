@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 class GlobalState {
   static final GlobalState _instance = GlobalState._internal();

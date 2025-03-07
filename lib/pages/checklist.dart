@@ -13,7 +13,7 @@ class Checklist extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(
-              'https://alderandalouette.com/cdn/shop/files/IMG-1093.webp?v=1711705801&width=1946',
+              'https://media.istockphoto.com/id/185090197/photo/blank-scroll-isolated-on-white.jpg?s=612x612&w=0&k=20&c=sJNd5jws0maScPIxsgwlDyH_wqgpiLM16MvcD6kBoP4=',
             ),
             fit: BoxFit.cover, // Makes the image cover the whole screen
           ),
@@ -25,15 +25,20 @@ class Checklist extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(32.0),
               child: Column(
-                children: [
-                  Text('Checklist', style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
-                  Text('ORDER BAGEL', style: TextStyle(color: GlobalState().isBagelOrdered ? Color.fromARGB(255, 255, 0, 0) : const Color.fromARGB(255, 0, 0, 0))),
-                  Text('Find the royal throne', style: TextStyle(color:  GlobalState().spinnychair ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0))),
-                  Text('Figure out the sponser of the Sustainable living lab', style: TextStyle(color:  GlobalState().basf ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0))),
-                  Text('Something about one of the donors on the donor wall', style: TextStyle(color:  GlobalState().donorwall ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0))),
-                  Text('Number of Tables in common Area', style: TextStyle(color:  GlobalState().numChairs ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0))),
-                  Text('Something about big stairs', style: TextStyle(color:  GlobalState().staircase ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0))),
-                  Text('Something about center of engineering', style: TextStyle(color:  GlobalState().centerofeng ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0))),
+                children: [ 
+                  Text('ORDER BAGEL', style: TextStyle(color: GlobalState().isBagelOrdered ? Color.fromARGB(255, 255, 0, 0) : const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
+                  SizedBox(height: 20),
+                  Text('Find the royal throne', style: TextStyle(color:  GlobalState().spinnychair ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
+                  SizedBox(height: 20),
+                  Text('Figure out the sponser of the Sustainable living lab', style: TextStyle(color:  GlobalState().basf ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
+                  SizedBox(height: 20),
+                  Text('Something about one of the donors on the donor wall', style: TextStyle(color:  GlobalState().donorwall ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
+                  SizedBox(height: 20),
+                  Text('Find the flier on the wall', style: TextStyle(color:  GlobalState().numChairs ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
+                  SizedBox(height: 20),
+                  Text('Something about big stairs', style: TextStyle(color:  GlobalState().staircase ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
+                  SizedBox(height: 20),
+                  Text('Something about center of engineering', style: TextStyle(color:  GlobalState().centerofeng ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
           
 
                 ],

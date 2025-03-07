@@ -3,7 +3,6 @@ import 'package:scavenger_hunt/pages/panera.dart';
 import 'pages/rightHallway.dart';
 import 'pages/commonArea.dart';
 import 'pages/checklist.dart';
-import 'pages/panera.dart';
 
 void main() {
   runApp(const MyApp());

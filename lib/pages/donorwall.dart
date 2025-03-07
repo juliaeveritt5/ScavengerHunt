@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'bagel.dart';
 import 'rightHallway.dart';
-import 'commonArea.dart';
 import 'checklist.dart';
 import 'globalboolean.dart';
 import 'centerofEng.dart';

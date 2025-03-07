@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
-import 'bagel.dart';
-import 'rightHallway.dart';
-import 'commonArea.dart';
 import 'checklist.dart';
 import 'globalboolean.dart';
-import 'donorwall.dart';
-import 'centerofeng.dart';
-import 'chairroom.dart';
 
 
 class chairroom extends StatelessWidget {
