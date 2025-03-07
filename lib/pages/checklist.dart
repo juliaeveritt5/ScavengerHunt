@@ -33,19 +33,19 @@ class Checklist extends StatelessWidget {
               padding: const EdgeInsets.all(32.0),
               child: Column(
                 children: [ 
-                  Text('ORDER BAGEL', style: TextStyle(color: GlobalState().isBagelOrdered ? Color.fromARGB(255, 255, 0, 0) : const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
+                  Text('ORDER BAGEL', style: TextStyle(color: GlobalState().isBagelOrdered ? Color.fromARGB(255, 4, 168, 12) : const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
                   SizedBox(height: 20),
-                  Text('Find the royal throne', style: TextStyle(color:  GlobalState().spinnychair ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
+                  Text('Find the royal throne', style: TextStyle(color:  GlobalState().spinnychair ? Color.fromARGB(255, 4, 168, 12): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
                   SizedBox(height: 20),
-                  Text('Figure out the sponser of the Sustainable living lab', style: TextStyle(color:  GlobalState().basf ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
+                  Text('Figure out the sponser of the Sustainable living lab', style: TextStyle(color:  GlobalState().basf ? Color.fromARGB(255, 4, 168, 12): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
                   SizedBox(height: 20),
-                  Text('Find the name of the donor on the donor wall', style: TextStyle(color:  GlobalState().donorwall ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
+                  Text('Find the name of the donor on the donor wall', style: TextStyle(color:  GlobalState().donorwall ? Color.fromARGB(255, 4, 168, 12): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
                   SizedBox(height: 20),
-                  Text('Find the flier on the wall', style: TextStyle(color:  GlobalState().numChairs ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
+                  Text('Find the flier on the wall', style: TextStyle(color:  GlobalState().numChairs ? Color.fromARGB(255, 4, 168, 12): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
                   SizedBox(height: 20),
-                  Text('Something about big stairs', style: TextStyle(color:  GlobalState().staircase ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
+                  Text('Something about big stairs', style: TextStyle(color:  GlobalState().staircase ? Color.fromARGB(255, 4, 168, 12): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
                   SizedBox(height: 20),
-                  Text('Find the cool crane thingy', style: TextStyle(color:  GlobalState().centerofeng ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
+                  Text('Find the cool crane thingy', style: TextStyle(color:  GlobalState().centerofeng ? Color.fromARGB(255, 4, 168, 12): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
           
 
                 ],
