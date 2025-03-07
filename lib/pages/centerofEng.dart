@@ -27,7 +27,7 @@ class centerofEng extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(16.0),
             child: Text(
-              'ADD 3 Buttons for who sponsered the lab - first one should be basf and should update checklist',
+              'ADD button to see the crane and mark off checklist',
               style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
               textAlign: TextAlign.center,
             ),

@@ -38,7 +38,7 @@ class Checklist extends StatelessWidget {
                   SizedBox(height: 20),
                   Text('Something about big stairs', style: TextStyle(color:  GlobalState().staircase ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
                   SizedBox(height: 20),
-                  Text('Something about center of engineering', style: TextStyle(color:  GlobalState().centerofeng ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
+                  Text('Find the cool crane thingy', style: TextStyle(color:  GlobalState().centerofeng ? Color.fromARGB(255, 255, 0, 0): const Color.fromARGB(255, 0, 0, 0), fontSize: 24)),
           
 
                 ],

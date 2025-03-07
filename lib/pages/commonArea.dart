@@ -46,7 +46,7 @@ class commonArea extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(16.0),
               child: Text(
-                'How many tables are in the commons area?',
+                'You are in the commons, I wonder what else you could find here',
                 style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
                 textAlign: TextAlign.center,
               ),
