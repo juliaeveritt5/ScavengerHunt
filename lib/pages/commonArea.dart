@@ -5,6 +5,7 @@ import 'basf.dart';
 import 'globalboolean.dart';
 import 'flier.dart';
 import 'stairarea.dart';
+import 'pftMap.dart';
 
 class commonArea extends StatelessWidget {
   const commonArea({super.key});
@@ -149,6 +150,17 @@ class commonArea extends StatelessWidget {
                 );
               },
               child: const Icon(Icons.smart_button),
+            ),
+            const SizedBox(width: 10),
+            //Map Page
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MapPage()),
+                );
+              },
+              child: const Icon(Icons.map),
             ),
             const SizedBox(width: 10),
             FloatingActionButton(

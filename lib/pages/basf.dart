@@ -3,7 +3,7 @@ import 'commonArea.dart';
 import 'checklist.dart';
 import 'globalboolean.dart';
 import 'donorwall.dart';
-
+import 'pftMap.dart';
 class basf extends StatelessWidget {
   const basf({super.key});
 
@@ -83,6 +83,16 @@ class basf extends StatelessWidget {
               );
             },
             child: const Icon(Icons.smart_button),
+          ),
+          const SizedBox(width: 10),
+          FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const MapPage()),
+              );
+            },
+            child: const Icon(Icons.map),
           ),
           const SizedBox(width: 10),
           FloatingActionButton(

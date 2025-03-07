@@ -3,7 +3,7 @@ import 'bagel.dart';
 import 'rightHallway.dart';
 import 'checklist.dart';
 import 'globalboolean.dart';
-
+import 'pftMap.dart';
 class Panera extends StatelessWidget {
   const Panera({super.key});
 
@@ -27,7 +27,7 @@ class Panera extends StatelessWidget {
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: [               
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: const Text(
@@ -118,6 +118,16 @@ class Panera extends StatelessWidget {
               );
             },
             child: const Icon(Icons.smart_button),
+          ),
+          const SizedBox(width: 20),
+          FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const MapPage()),
+              );
+            },
+            child: const Icon(Icons.map),
           ),
           const SizedBox(width: 10),
           FloatingActionButton(

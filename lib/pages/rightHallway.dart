@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'commonArea.dart';
 import 'checklist.dart';
 import 'basf.dart';
+import 'pftMap.dart';
 
 class RightHallway extends StatelessWidget {
   const RightHallway({super.key});
@@ -44,7 +45,7 @@ class RightHallway extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(16.0),
               child: Text(
-                'BACK GIVES COMMON AREA FORWARD GIVES BASF LAB',
+                'BACK BUTTON GIVES COMMON AREA. FORWARD BUTTON GIVES BASF LAB',
                 style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
                 textAlign: TextAlign.center,
               ),
@@ -85,6 +86,17 @@ class RightHallway extends StatelessWidget {
                 );
               },
               child: const Icon(Icons.smart_button),
+            ),
+            const SizedBox(width: 10),
+            //Map Page
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MapPage()),
+                );
+              },
+              child: const Icon(Icons.map),
             ),
             const SizedBox(width: 10),
             FloatingActionButton(
