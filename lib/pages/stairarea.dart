@@ -12,34 +12,101 @@ class Stairarea extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('This is big stairs ')),
+        title: const Center(child: Text('You have found the big stairs.')),
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage(
-              'https://marvel-b1-cdn.bc0a.com/f00000000290274/www.lsu.edu/eng/images/hero_images/supporthero.jpg',
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              // Centering the image
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset('assets/bigstair.png', width: 600),
+              ),
             ),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: const Center(
-          child: Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              'ADD 3 Buttons for who sponsered the lab - first one should be basf and should update checklist',
-              style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
-              textAlign: TextAlign.center,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
             ),
-          ),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                'How many big stairs are there?',
+                style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Center(
+                child: Row(
+                  mainAxisAlignment:
+                      MainAxisAlignment.center, // Centering the buttons
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurple,
+                        textStyle: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      child: const Text(
+                        "20",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    ElevatedButton(
+                      onPressed: () {
+                        GlobalState().staircase = true;
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const centerofEng()),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurple,
+                        textStyle: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      child: const Text(
+                        "11",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurple,
+                        textStyle: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      child: const Text(
+                        "7",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
         ),
       ),
       floatingActionButton: Row(
         mainAxisSize: MainAxisSize.min, // Prevents excess spacing
         children: [
-                    FloatingActionButton(
+          FloatingActionButton(
             onPressed: () {
-               GlobalState().staircase = true; //fact about big stair case 
+              GlobalState().staircase = true; //fact about big stair case
             },
             child: const Icon(Icons.star),
           ),
@@ -62,7 +129,7 @@ class Stairarea extends StatelessWidget {
             },
             child: const Icon(Icons.arrow_forward),
           ),
-                    FloatingActionButton(
+          FloatingActionButton(
             onPressed: () {
               Navigator.push(
                 context,

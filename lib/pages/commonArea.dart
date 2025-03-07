@@ -49,71 +49,80 @@ class commonArea extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(16.0),
               child: Text(
-                'You are in the commons, I wonder what else you could find here',
+                'How many tables are in the commons?',
                 style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
                 textAlign: TextAlign.center,
               ),
             ),
             Padding(
-  padding: const EdgeInsets.all(16.0),
-  child: Center(
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.center, // Centering the buttons
-      children: [
-        ElevatedButton(
-          onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const flier()),
-              );
-          },
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.deepPurple,
-            textStyle: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+              padding: const EdgeInsets.all(16.0),
+              child: Center(
+                child: Row(
+                  mainAxisAlignment:
+                      MainAxisAlignment.center, // Centering the buttons
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const flier()),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurple,
+                        textStyle: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      child: const Text(
+                        "12",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    const SizedBox(width: 10), // Adding spacing between buttons
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurple,
+                        textStyle: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      child: const Text(
+                        "14",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    const SizedBox(width: 10), // Adding spacing between buttons
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurple,
+                        textStyle: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      child: const Text(
+                        "109",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ),
-          child: const Text(
-            "12",
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-        const SizedBox(width: 10), // Adding spacing between buttons
-        ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.deepPurple,
-            textStyle: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+            Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                'You are in the commons, I wonder what else you could find here',
+                style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
+                textAlign: TextAlign.center,
+              ),
             ),
-          ),
-          child: const Text(
-            "14",
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-        const SizedBox(width: 10), // Adding spacing between buttons
-        ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.deepPurple,
-            textStyle: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          child: const Text(
-            "109",
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-      ],
-    ),
-  ),
-)
-
           ],
         ),
       ),

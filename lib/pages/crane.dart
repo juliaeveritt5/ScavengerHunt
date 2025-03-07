@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:scavenger_hunt/pages/basf.dart';
+import 'package:scavenger_hunt/pages/chairroom.dart';
 import 'globalboolean.dart';
 import 'rightHallway.dart';
-import 'commonArea.dart';
 
-class flier extends StatelessWidget {
-  const flier({super.key});
+class Crane extends StatelessWidget {
+  const Crane({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,7 @@ class flier extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: const Text(
-                    'You found a flyer for Fundraiser Kickoff 2025!',
+                    'You found the crane!',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 30,
@@ -49,7 +48,7 @@ class flier extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Image.asset('assets/commonsflier.png', width: 600),
+                  child: Image.asset('assets/crane.png', width: 600),
                 ),
                 Text(
                   'This task has been checked off on your list.',
@@ -70,9 +69,9 @@ class flier extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const basf()),
+            MaterialPageRoute(builder: (context) => const chairroom()),
           );
-          GlobalState().numChairs = true;
+          GlobalState().isBagelOrdered = true;
         },
         child: const Icon(Icons.arrow_forward),
       ),

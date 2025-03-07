@@ -17,7 +17,7 @@ class donorwall extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Mystery Lab',
+          'Donor Wall',
           style: TextStyle(
             color: Colors.black,
             fontSize: 20,
@@ -77,10 +77,15 @@ class donorwall extends StatelessWidget {
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
-                    const SizedBox(width: 10), 
+                    const SizedBox(width: 10),
                     ElevatedButton(
                       onPressed: () {
                         GlobalState().donorwall = true;
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Stairarea()),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.deepPurple,

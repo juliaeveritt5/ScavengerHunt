@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:scavenger_hunt/pages/gamefinpg.dart';
 import 'checklist.dart';
 import 'globalboolean.dart';
-
 
 class chairroom extends StatelessWidget {
   const chairroom({super.key});
@@ -12,36 +12,81 @@ class chairroom extends StatelessWidget {
       appBar: AppBar(
         title: const Center(child: Text('This is the glorious chair room ')),
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage(
-              'https://marvel-b1-cdn.bc0a.com/f00000000290274/www.lsu.edu/eng/images/hero_images/supporthero.jpg',
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text(
+                "You have found one of the epic spinny chairs",
+                style: TextStyle(color: Colors.black, fontSize: 20),
+                textAlign: TextAlign.center,
+              ),
             ),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: const Center(
-          child: Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              'ADD 3 Buttons for who sponsered the lab - first one should be basf and should update checklist',
-              style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
-              textAlign: TextAlign.center,
+            Center(
+              // Centering the image
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset('assets/coolchair.png', width: 600),
+              ),
             ),
-          ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                'Now go sit in the chair',
+                style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Center(
+                child: Row(
+                  mainAxisAlignment:
+                      MainAxisAlignment.center, // Centering the buttons
+                  children: [
+                    const SizedBox(width: 10),
+                    ElevatedButton(
+                      onPressed: () {
+                        GlobalState().spinnychair = true;
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const gamefinpg()),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurple,
+                        textStyle: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      child: const Text(
+                        "I sat in it",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
         ),
       ),
       floatingActionButton: Row(
         mainAxisSize: MainAxisSize.min, // Prevents excess spacing
         children: [
-                    FloatingActionButton(
+          FloatingActionButton(
             onPressed: () {
-               GlobalState().spinnychair = true; //fact about cool chair
+              GlobalState().spinnychair = true; //fact about cool chair
             },
             child: const Icon(Icons.star),
           ),
-
           FloatingActionButton(
             onPressed: () {
               Navigator.push(

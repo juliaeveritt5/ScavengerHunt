@@ -7,6 +7,7 @@ import 'globalboolean.dart';
 import 'flier.dart';
 import 'stairarea.dart';
 import 'pftMap.dart';
+import 'donorwall.dart';
 
 class basf extends StatelessWidget {
   const basf({super.key});
@@ -76,10 +77,15 @@ class basf extends StatelessWidget {
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
-                    const SizedBox(width: 10), 
+                    const SizedBox(width: 10),
                     ElevatedButton(
                       onPressed: () {
                         GlobalState().basf = true;
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const donorwall()),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.deepPurple,
