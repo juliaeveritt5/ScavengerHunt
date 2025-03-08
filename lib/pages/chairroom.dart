@@ -58,7 +58,8 @@ class chairroom extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const gamefinpg()),
+                            builder: (context) => const gamefinpg()
+                          ),
                         );
                       },
                       style: ElevatedButton.styleFrom(

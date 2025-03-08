@@ -35,17 +35,35 @@ class gamefinpg extends StatelessWidget {
                                 : const Color.fromARGB(255, 0, 0, 0),
                             fontSize: 24)),
                     SizedBox(height: 30),
-                    Text("WOULD YOU LIKE TO PLAY AGAIN?"),
                     SizedBox(width: 15),
-                    FloatingActionButton(
+                    ElevatedButton(
                       onPressed: () {
+                        GlobalState().isBagelOrdered = false;
+                        GlobalState().basf = false;
+                        GlobalState().donorwall = false;
+                        GlobalState().spinnychair = false;
+                        GlobalState().staircase = false;
+                        GlobalState().centerofeng = false;
+                        GlobalState().longHallway = false;
+                        GlobalState().numChairs = false;
+
                         Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const MyApp()),
                         );
                       },
-                      child: const Icon(Icons.restart_alt),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurple,
+                        textStyle: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      child: const Text(
+                        "WOULD YOU LIKE TO PLAY AGAIN?",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ],
                 ),
