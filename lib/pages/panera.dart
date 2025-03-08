@@ -93,6 +93,28 @@ class Panera extends StatelessWidget {
               ],
             ),
           ),
+          Positioned(
+            top: 10,
+            right: 10,
+            child: Container(
+              padding: const EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.7),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("LEGEND:", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                  Text("⬅️ Back to Bagel", style: TextStyle(color: Colors.white)),
+                  Text("➡️ Right Hallway", style: TextStyle(color: Colors.white)),
+                  Text("📝 Checklist", style: TextStyle(color: Colors.white)),
+                  Text("🗺️ Map Page", style: TextStyle(color: Colors.white)),
+                  Text("🔄 Refresh Page", style: TextStyle(color: Colors.white)),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
       floatingActionButton: Row(
