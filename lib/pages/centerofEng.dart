@@ -5,12 +5,20 @@ import 'donorwall.dart';
 import 'chairroom.dart';
 import 'stairarea.dart';
 import 'crane.dart';
+import 'gamefinpg.dart';
 
 class centerofEng extends StatelessWidget {
   const centerofEng({super.key});
 
   @override
   Widget build(BuildContext context) {
+    if (isListComplete()) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const gamefinpg()),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Center(child: Text('This is the Center of Engineering')),
@@ -133,5 +141,14 @@ class centerofEng extends StatelessWidget {
       ),
       
     );
+  }
+  bool isListComplete() {
+    return GlobalState().isBagelOrdered &&
+        GlobalState().spinnychair &&
+        GlobalState().basf &&
+        GlobalState().donorwall &&
+        GlobalState().numChairs &&
+        GlobalState().staircase &&
+        GlobalState().centerofeng;
   }
 }

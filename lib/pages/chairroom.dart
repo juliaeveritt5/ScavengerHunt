@@ -11,6 +11,12 @@ class chairroom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (isListComplete()) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const gamefinpg()),
+      );
+    }
     return Scaffold(
       appBar: AppBar(
         title: const Center(child: Text('This is the glorious chair room ')),
@@ -55,11 +61,12 @@ class chairroom extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         GlobalState().spinnychair = true;
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Stairarea()),
-                        );
+                        Navigator.pop(context);
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //       builder: (context) => const Stairarea()),
+                        // );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.deepPurple,
@@ -88,10 +95,7 @@ class chairroom extends StatelessWidget {
             FloatingActionButton(
               onPressed: () {
                 GlobalState().spinnychair = true; //fact about cool chair
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Stairarea()),
-                );
+                Navigator.pop(context);
               },
               child: const Icon(Icons.arrow_back),
             ),
@@ -126,5 +130,14 @@ class chairroom extends StatelessWidget {
         ),
       ),
     );
+  }
+   bool isListComplete() {
+    return GlobalState().isBagelOrdered &&
+        GlobalState().spinnychair &&
+        GlobalState().basf &&
+        GlobalState().donorwall &&
+        GlobalState().numChairs &&
+        GlobalState().staircase &&
+        GlobalState().centerofeng;
   }
 }

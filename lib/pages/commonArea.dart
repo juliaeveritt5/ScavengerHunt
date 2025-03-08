@@ -4,12 +4,21 @@ import 'rightHallway.dart';
 import 'flier.dart';
 import 'stairarea.dart';
 import 'pftMap.dart';
+import 'globalboolean.dart';
+import 'gamefinpg.dart';
 
 class commonArea extends StatelessWidget {
   const commonArea({super.key});
 
   @override
   Widget build(BuildContext context) {
+    if (isListComplete()) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const gamefinpg()),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -180,5 +189,14 @@ class commonArea extends StatelessWidget {
         ),
       ),
     );
+  }
+  bool isListComplete() {
+    return GlobalState().isBagelOrdered &&
+        GlobalState().spinnychair &&
+        GlobalState().basf &&
+        GlobalState().donorwall &&
+        GlobalState().numChairs &&
+        GlobalState().staircase &&
+        GlobalState().centerofeng;
   }
 }

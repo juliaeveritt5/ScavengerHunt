@@ -4,12 +4,20 @@ import 'rightHallway.dart';
 import 'checklist.dart';
 import 'globalboolean.dart';
 import 'pftMap.dart';
+import 'gamefinpg.dart';
 
 class Panera extends StatelessWidget {
   const Panera({super.key});
 
   @override
   Widget build(BuildContext context) {
+    if (isListComplete()) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const gamefinpg()),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Center(child: Text('PANERA')),
@@ -139,5 +147,14 @@ class Panera extends StatelessWidget {
         ],
       ),
     );
+  }
+  bool isListComplete() {
+    return GlobalState().isBagelOrdered &&
+        GlobalState().spinnychair &&
+        GlobalState().basf &&
+        GlobalState().donorwall &&
+        GlobalState().numChairs &&
+        GlobalState().staircase &&
+        GlobalState().centerofeng;
   }
 }

@@ -50,7 +50,7 @@ class gamefinpg extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const MyApp()),
+                            builder: (context) => const MyApp()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
