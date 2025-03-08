@@ -79,15 +79,11 @@ class centerofEng extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: Row(
-        mainAxisSize: MainAxisSize.min, // Prevents excess spacing
-        children: [
-          FloatingActionButton(
-            onPressed: () {
-              GlobalState().centerofeng = true;
-            },
-            child: const Icon(Icons.star),
-          ),
+      floatingActionButton: Align(
+        alignment: Alignment.bottomCenter,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
           FloatingActionButton(
             onPressed: () {
               Navigator.push(
@@ -96,16 +92,6 @@ class centerofEng extends StatelessWidget {
               );
             },
             child: const Icon(Icons.arrow_back),
-          ),
-
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const donorwall()),
-              );
-            },
-            child: const Icon(Icons.arrow_forward),
           ),
           FloatingActionButton(
             onPressed: () {
@@ -116,8 +102,16 @@ class centerofEng extends StatelessWidget {
             },
             child: const Icon(Icons.arrow_forward),
           ),
-          const SizedBox(width: 10), // Space between buttons
-          const SizedBox(width: 10),
+          FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const donorwall()),
+              );
+            },
+            child: const Icon(Icons.arrow_forward),
+          ),
+          const SizedBox(width: 20),
           FloatingActionButton(
             onPressed: () {
               Navigator.push(
@@ -135,7 +129,9 @@ class centerofEng extends StatelessWidget {
             child: const Icon(Icons.refresh),
           ),
         ],
+        ),
       ),
+      
     );
   }
 }

@@ -75,7 +75,7 @@ class RightHallway extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => const basf()),
                 );
               },
-              child: const Icon(Icons.arrow_forward),
+              child: const Icon(Icons.arrow_upward),
             ),
             const SizedBox(width: 10),
             FloatingActionButton(

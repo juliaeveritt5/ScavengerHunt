@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:scavenger_hunt/pages/gamefinpg.dart';
 import 'checklist.dart';
 import 'globalboolean.dart';
+import 'pftMap.dart';
+import 'stairarea.dart';
 
 class chairroom extends StatelessWidget {
   const chairroom({super.key});
@@ -84,9 +86,24 @@ class chairroom extends StatelessWidget {
           FloatingActionButton(
             onPressed: () {
               GlobalState().spinnychair = true; //fact about cool chair
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Stairarea()),
+                );
             },
-            child: const Icon(Icons.star),
+            child: const Icon(Icons.arrow_back),
           ),
+          SizedBox(width: 10),
+          FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MapPage()),
+                );
+              },
+              child: const Icon(Icons.map),
+            ),
+            const SizedBox(width: 10),
           FloatingActionButton(
             onPressed: () {
               Navigator.push(

@@ -4,6 +4,7 @@ import 'rightHallway.dart';
 import 'checklist.dart';
 import 'globalboolean.dart';
 import 'pftMap.dart';
+
 class Panera extends StatelessWidget {
   const Panera({super.key});
 
@@ -27,7 +28,7 @@ class Panera extends StatelessWidget {
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [               
+              children: [
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: const Text(

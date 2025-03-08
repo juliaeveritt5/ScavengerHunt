@@ -3,6 +3,7 @@ import 'package:scavenger_hunt/pages/donorwall.dart';
 import 'checklist.dart';
 import 'globalboolean.dart';
 import 'pftMap.dart';
+import 'rightHallway.dart';
 
 class basf extends StatelessWidget {
   const basf({super.key});
@@ -130,16 +131,16 @@ class basf extends StatelessWidget {
               },
               child: const Icon(Icons.arrow_back),
             ),
-            // const SizedBox(width: 10),
-            // FloatingActionButton(
-            //   onPressed: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(builder: (context) => const basf()),
-            //     );
-            //   },
-            //   child: const Icon(Icons.arrow_forward),
-            // ),
+            const SizedBox(width: 10),
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const RightHallway()),
+                );
+              },
+              child: const Icon(Icons.arrow_downward),
+            ),
             const SizedBox(width: 10),
             FloatingActionButton(
               onPressed: () {

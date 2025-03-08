@@ -104,8 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Text(
                         "Let's Geaux",
                         style: TextStyle(color: Colors.white),
-                      )
-                    ),
+                      )),
                 )
               ],
             ),

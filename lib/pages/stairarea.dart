@@ -4,6 +4,7 @@ import 'checklist.dart';
 import 'globalboolean.dart';
 import 'centerofeng.dart';
 import 'chairroom.dart';
+import 'pftMap.dart';
 
 class Stairarea extends StatelessWidget {
   const Stairarea({super.key});
@@ -101,15 +102,11 @@ class Stairarea extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: Row(
-        mainAxisSize: MainAxisSize.min, // Prevents excess spacing
-        children: [
-          FloatingActionButton(
-            onPressed: () {
-              GlobalState().staircase = true; //fact about big stair case
-            },
-            child: const Icon(Icons.star),
-          ),
+      floatingActionButton: Align(
+        alignment: Alignment.bottomCenter,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
           FloatingActionButton(
             onPressed: () {
               Navigator.push(
@@ -138,8 +135,7 @@ class Stairarea extends StatelessWidget {
             },
             child: const Icon(Icons.arrow_forward),
           ),
-          const SizedBox(width: 10), // Space between buttons
-          const SizedBox(width: 10),
+          const SizedBox(width: 20),
           FloatingActionButton(
             onPressed: () {
               Navigator.push(
@@ -151,12 +147,23 @@ class Stairarea extends StatelessWidget {
           ),
           const SizedBox(width: 10),
           FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MapPage()),
+                );
+              },
+              child: const Icon(Icons.map),
+            ),
+            const SizedBox(width: 10),
+          FloatingActionButton(
             onPressed: () {
               Navigator.pop(context); // Go back to the previous page
             },
             child: const Icon(Icons.refresh),
           ),
         ],
+        ),
       ),
     );
   }

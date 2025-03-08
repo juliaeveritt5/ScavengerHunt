@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'checklist.dart';
-import 'basf.dart';
+import 'rightHallway.dart';
 import 'flier.dart';
 import 'stairarea.dart';
 import 'pftMap.dart';
@@ -114,7 +114,7 @@ class commonArea extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(3.0),
               child: Text(
                 'You are in the commons, I wonder what else you could find here',
                 style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
@@ -136,14 +136,14 @@ class commonArea extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => const Stairarea()),
                 );
               },
-              child: const Icon(Icons.arrow_back),
+              child: const Icon(Icons.arrow_upward),
             ),
             const SizedBox(width: 10),
             FloatingActionButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const basf()),
+                  MaterialPageRoute(builder: (context) => const RightHallway()),
                 );
               },
               child: const Icon(Icons.arrow_forward),
