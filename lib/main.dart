@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:scavenger_hunt/pages/panera.dart';
-import 'pages/rightHallway.dart';
-import 'pages/commonArea.dart';
-import 'pages/checklist.dart';
 
 void main() {
   runApp(const MyApp());
