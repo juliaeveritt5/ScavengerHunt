@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scavenger_hunt/pages/chairroom.dart';
 import 'globalboolean.dart';
+import 'centerofEng.dart';
 
 class Crane extends StatelessWidget {
   const Crane({super.key});
@@ -68,7 +69,7 @@ class Crane extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const chairroom()),
+            MaterialPageRoute(builder: (context) => const centerofEng()),
           );
           GlobalState().isBagelOrdered = true;
         },

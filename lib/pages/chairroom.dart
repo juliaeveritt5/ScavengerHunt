@@ -4,6 +4,7 @@ import 'checklist.dart';
 import 'globalboolean.dart';
 import 'pftMap.dart';
 import 'stairarea.dart';
+import 'stairarea.dart';
 
 class chairroom extends StatelessWidget {
   const chairroom({super.key});
@@ -27,7 +28,6 @@ class chairroom extends StatelessWidget {
               ),
             ),
             Center(
-              // Centering the image
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Image.asset('assets/coolchair.png', width: 600),
@@ -58,8 +58,7 @@ class chairroom extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const gamefinpg()
-                          ),
+                              builder: (context) => const Stairarea()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
@@ -81,21 +80,23 @@ class chairroom extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: Row(
-        mainAxisSize: MainAxisSize.min, // Prevents excess spacing
-        children: [
-          FloatingActionButton(
-            onPressed: () {
-              GlobalState().spinnychair = true; //fact about cool chair
-              Navigator.push(
+      floatingActionButton: Align(
+        alignment: Alignment.bottomCenter,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FloatingActionButton(
+              onPressed: () {
+                GlobalState().spinnychair = true; //fact about cool chair
+                Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const Stairarea()),
                 );
-            },
-            child: const Icon(Icons.arrow_back),
-          ),
-          SizedBox(width: 10),
-          FloatingActionButton(
+              },
+              child: const Icon(Icons.arrow_back),
+            ),
+            SizedBox(width: 10),
+            FloatingActionButton(
               onPressed: () {
                 Navigator.push(
                   context,
@@ -105,23 +106,24 @@ class chairroom extends StatelessWidget {
               child: const Icon(Icons.map),
             ),
             const SizedBox(width: 10),
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Checklist()),
-              );
-            },
-            child: const Icon(Icons.smart_button),
-          ),
-          const SizedBox(width: 10),
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.pop(context); // Go back to the previous page
-            },
-            child: const Icon(Icons.refresh),
-          ),
-        ],
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Checklist()),
+                );
+              },
+              child: const Icon(Icons.smart_button),
+            ),
+            const SizedBox(width: 10),
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.pop(context); // Go back to the previous page
+              },
+              child: const Icon(Icons.refresh),
+            ),
+          ],
+        ),
       ),
     );
   }

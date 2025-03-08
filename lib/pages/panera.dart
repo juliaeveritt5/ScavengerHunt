@@ -110,7 +110,6 @@ class Panera extends StatelessWidget {
             child: const Icon(Icons.arrow_forward),
           ),
           const SizedBox(width: 10),
-          const SizedBox(width: 10),
           FloatingActionButton(
             onPressed: () {
               Navigator.push(

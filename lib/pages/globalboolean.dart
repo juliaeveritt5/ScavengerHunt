@@ -1,4 +1,3 @@
-
 class GlobalState {
   static final GlobalState _instance = GlobalState._internal();
 

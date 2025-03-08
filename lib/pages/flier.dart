@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scavenger_hunt/pages/basf.dart';
 import 'globalboolean.dart';
+import 'commonArea.dart';
 
 class flier extends StatelessWidget {
   const flier({super.key});
@@ -68,7 +69,7 @@ class flier extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const basf()),
+            MaterialPageRoute(builder: (context) => const commonArea()),
           );
           GlobalState().numChairs = true;
         },
