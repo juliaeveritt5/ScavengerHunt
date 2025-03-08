@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:scavenger_hunt/pages/chairroom.dart';
 import 'globalboolean.dart';
 import 'centerofEng.dart';
+import 'gamefinpg.dart';
 
 class Crane extends StatelessWidget {
   const Crane({super.key});
@@ -67,14 +68,30 @@ class Crane extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const centerofEng()),
-          );
-          GlobalState().isBagelOrdered = true;
+          if (isListComplete()) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const gamefinpg()),
+            );
+          } else {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const centerofEng()),
+            );
+          }
         },
         child: const Icon(Icons.arrow_forward),
       ),
     );
+  }
+
+  bool isListComplete() {
+    return GlobalState().isBagelOrdered &&
+        GlobalState().spinnychair &&
+        GlobalState().basf &&
+        GlobalState().donorwall &&
+        GlobalState().numChairs &&
+        GlobalState().staircase &&
+        GlobalState().centerofeng;
   }
 }

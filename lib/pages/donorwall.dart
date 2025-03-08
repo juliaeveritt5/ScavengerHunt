@@ -88,11 +88,19 @@ class donorwall extends StatelessWidget {
                         ElevatedButton(
                           onPressed: () {
                             GlobalState().donorwall = true;
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const Stairarea()),
-                            );
+                            if (isListComplete()) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const gamefinpg()),
+                              );
+                            } else {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Stairarea()),
+                              );
+                            }
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.deepPurple,
@@ -106,7 +114,8 @@ class donorwall extends StatelessWidget {
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
-                        const SizedBox(width: 10), // Adding spacing between buttons
+                        const SizedBox(
+                            width: 10), // Adding spacing between buttons
                         ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
@@ -140,12 +149,16 @@ class donorwall extends StatelessWidget {
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("LEGEND:", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                  Text("LEGEND:",
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold)),
                   Text("⬅️ BASF Lab", style: TextStyle(color: Colors.white)),
-                  Text("➡️ Center of Engineering", style: TextStyle(color: Colors.white)),
+                  Text("➡️ Center of Engineering",
+                      style: TextStyle(color: Colors.white)),
                   Text("📝 Checklist", style: TextStyle(color: Colors.white)),
                   Text("🗺️ Map Page", style: TextStyle(color: Colors.white)),
-                  Text("🔄 Refresh Page", style: TextStyle(color: Colors.white)),
+                  Text("🔄 Refresh Page",
+                      style: TextStyle(color: Colors.white)),
                 ],
               ),
             ),

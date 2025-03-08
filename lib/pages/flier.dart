@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:scavenger_hunt/pages/basf.dart';
 import 'globalboolean.dart';
 import 'commonArea.dart';
+import 'gamefinpg.dart';
 
 class flier extends StatelessWidget {
   const flier({super.key});
@@ -67,14 +68,31 @@ class flier extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const commonArea()),
-          );
           GlobalState().numChairs = true;
+          if (isListComplete()) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const gamefinpg()),
+            );
+          } else {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const commonArea()),
+            );
+          }
         },
         child: const Icon(Icons.arrow_forward),
       ),
     );
+  }
+
+  bool isListComplete() {
+    return GlobalState().isBagelOrdered &&
+        GlobalState().spinnychair &&
+        GlobalState().basf &&
+        GlobalState().donorwall &&
+        GlobalState().numChairs &&
+        GlobalState().staircase &&
+        GlobalState().centerofeng;
   }
 }

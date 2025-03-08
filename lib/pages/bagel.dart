@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'globalboolean.dart';
 import 'rightHallway.dart';
+import 'gamefinpg.dart';
 
 class bagel extends StatelessWidget {
   const bagel({super.key});
@@ -66,14 +67,31 @@ class bagel extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const RightHallway()),
-          );
           GlobalState().isBagelOrdered = true;
+          if (isListComplete()) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const gamefinpg()),
+            );
+          } else {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const RightHallway()),
+            );
+          }
         },
         child: const Icon(Icons.arrow_forward),
       ),
     );
+  }
+
+  bool isListComplete() {
+    return GlobalState().isBagelOrdered &&
+        GlobalState().spinnychair &&
+        GlobalState().basf &&
+        GlobalState().donorwall &&
+        GlobalState().numChairs &&
+        GlobalState().staircase &&
+        GlobalState().centerofeng;
   }
 }

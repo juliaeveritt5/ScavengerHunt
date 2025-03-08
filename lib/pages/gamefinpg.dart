@@ -28,16 +28,20 @@ class gamefinpg extends StatelessWidget {
                 padding: const EdgeInsets.all(32.0),
                 child: Column(
                   children: [
-                    Text('GAME FINISHED',
-                        style: TextStyle(
-                            color: GlobalState().isBagelOrdered
-                                ? Color.fromARGB(255, 255, 0, 0)
-                                : const Color.fromARGB(255, 0, 0, 0),
-                            fontSize: 24)),
-                    SizedBox(height: 30),
-                    SizedBox(width: 15),
+                    Text(
+                      'GAME FINISHED',
+                      style: TextStyle(
+                        color: GlobalState().isBagelOrdered == true
+                            ? const Color.fromARGB(255, 255, 0, 0)
+                            : const Color.fromARGB(255, 0, 0, 0),
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 30),
                     ElevatedButton(
                       onPressed: () {
+                        // Resetting all global booleans to restart the game
                         GlobalState().isBagelOrdered = false;
                         GlobalState().basf = false;
                         GlobalState().donorwall = false;
@@ -47,10 +51,11 @@ class gamefinpg extends StatelessWidget {
                         GlobalState().longHallway = false;
                         GlobalState().numChairs = false;
 
-                        Navigator.push(
+                        // Navigate back to the starting page
+                        Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const MyApp()),
+                              builder: (context) => const MyApp()),
                         );
                       },
                       style: ElevatedButton.styleFrom(

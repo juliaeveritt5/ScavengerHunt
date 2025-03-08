@@ -1,22 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:scavenger_hunt/pages/centerofEng.dart';
 import 'package:scavenger_hunt/pages/gamefinpg.dart';
 import 'checklist.dart';
 import 'globalboolean.dart';
 import 'pftMap.dart';
 import 'stairarea.dart';
-import 'stairarea.dart';
 
-class chairroom extends StatelessWidget {
+class chairroom extends StatefulWidget {
   const chairroom({super.key});
 
   @override
+  State<chairroom> createState() => _ChairRoomState();
+}
+
+class _ChairRoomState extends State<chairroom> {
+  @override
+  void initState() {
+    super.initState();
+
+    // Check if the game is finished as soon as the screen is loaded
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (isListComplete()) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const gamefinpg()),
+        );
+      }
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    if (isListComplete()) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const gamefinpg()),
-      );
-    }
     return Scaffold(
       appBar: AppBar(
         title: const Center(child: Text('This is the glorious chair room ')),
@@ -41,9 +55,6 @@ class chairroom extends StatelessWidget {
                     child: Image.asset('assets/coolchair.png', width: 600),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                ),
                 const Padding(
                   padding: EdgeInsets.all(16.0),
                   child: Text(
@@ -55,34 +66,36 @@ class chairroom extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Center(
-                    child: Row(
-                      mainAxisAlignment:
-                          MainAxisAlignment.center, // Centering the buttons
-                      children: [
-                        const SizedBox(width: 10),
-                        ElevatedButton(
-                          onPressed: () {
-                            GlobalState().spinnychair = true;
-                            Navigator.pop(context);
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //       builder: (context) => const Stairarea()),
-                            // );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.deepPurple,
-                            textStyle: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          child: const Text(
-                            "I sat in it",
-                            style: TextStyle(color: Colors.white),
-                          ),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          GlobalState().spinnychair = true;
+                        });
+                        if (isListComplete()) {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const gamefinpg()),
+                          );
+                        } else {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const centerofEng()),
+                          );
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurple,
+                        textStyle: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
                         ),
-                      ],
+                      ),
+                      child: const Text(
+                        "I sat in it",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
                 )
@@ -101,11 +114,14 @@ class chairroom extends StatelessWidget {
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("LEGEND:", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                  Text("LEGEND:",
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold)),
                   Text("⬅️ Back", style: TextStyle(color: Colors.white)),
                   Text("📝 Checklist", style: TextStyle(color: Colors.white)),
                   Text("🗺️ Map Page", style: TextStyle(color: Colors.white)),
-                  Text("🔄 Refresh Page", style: TextStyle(color: Colors.white)),
+                  Text("🔄 Refresh Page",
+                      style: TextStyle(color: Colors.white)),
                 ],
               ),
             ),
@@ -119,8 +135,18 @@ class chairroom extends StatelessWidget {
           children: [
             FloatingActionButton(
               onPressed: () {
-                GlobalState().spinnychair = true; //fact about cool chair
-                Navigator.pop(context);
+                setState(() {
+                  GlobalState().spinnychair = true;
+                });
+
+                if (isListComplete()) {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const gamefinpg()),
+                  );
+                } else {
+                  Navigator.pop(context);
+                }
               },
               child: const Icon(Icons.arrow_back),
             ),
@@ -134,7 +160,7 @@ class chairroom extends StatelessWidget {
               },
               child: const Icon(Icons.smart_button),
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             FloatingActionButton(
               onPressed: () {
                 Navigator.push(
@@ -147,7 +173,7 @@ class chairroom extends StatelessWidget {
             const SizedBox(width: 10),
             FloatingActionButton(
               onPressed: () {
-                Navigator.pop(context); // Go back to the previous page
+                Navigator.pop(context);
               },
               child: const Icon(Icons.refresh),
             ),

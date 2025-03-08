@@ -87,11 +87,19 @@ class basf extends StatelessWidget {
                         ElevatedButton(
                           onPressed: () {
                             GlobalState().basf = true;
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const donorwall()),
-                            );
+                            if (isListComplete()) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const gamefinpg()),
+                              );
+                            } else {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const donorwall()),
+                              );
+                            }
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.deepPurple,
@@ -140,12 +148,17 @@ class basf extends StatelessWidget {
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("LEGEND:", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                  Text("⬅️ Back to Donor Wall", style: TextStyle(color: Colors.white)),
-                  Text("⬇️ Right Hallway", style: TextStyle(color: Colors.white)),
+                  Text("LEGEND:",
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold)),
+                  Text("⬅️ Back to Donor Wall",
+                      style: TextStyle(color: Colors.white)),
+                  Text("⬇️ Right Hallway",
+                      style: TextStyle(color: Colors.white)),
                   Text("📝 Checklist", style: TextStyle(color: Colors.white)),
                   Text("🗺️ Map Page", style: TextStyle(color: Colors.white)),
-                  Text("🔄 Refresh Page", style: TextStyle(color: Colors.white)),
+                  Text("🔄 Refresh Page",
+                      style: TextStyle(color: Colors.white)),
                 ],
               ),
             ),

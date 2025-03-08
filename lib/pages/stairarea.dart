@@ -72,11 +72,19 @@ class Stairarea extends StatelessWidget {
                         ElevatedButton(
                           onPressed: () {
                             GlobalState().staircase = true;
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const centerofEng()),
-                            );
+                            if (isListComplete()) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const gamefinpg()),
+                              );
+                            } else {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const centerofEng()),
+                              );
+                            }
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.deepPurple,
@@ -124,13 +132,19 @@ class Stairarea extends StatelessWidget {
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("LEGEND:", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                  Text("⬅️ To Commons Area", style: TextStyle(color: Colors.white)),
-                  Text("➡️ Center of Engineering", style: TextStyle(color: Colors.white)),
-                  Text("➡️ To Chair Room", style: TextStyle(color: Colors.white)),
+                  Text("LEGEND:",
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold)),
+                  Text("⬅️ To Commons Area",
+                      style: TextStyle(color: Colors.white)),
+                  Text("➡️ Center of Engineering",
+                      style: TextStyle(color: Colors.white)),
+                  Text("➡️ To Chair Room",
+                      style: TextStyle(color: Colors.white)),
                   Text("📝 Checklist", style: TextStyle(color: Colors.white)),
                   Text("🗺️ Map Page", style: TextStyle(color: Colors.white)),
-                  Text("🔄 Refresh Page", style: TextStyle(color: Colors.white)),
+                  Text("🔄 Refresh Page",
+                      style: TextStyle(color: Colors.white)),
                 ],
               ),
             ),
